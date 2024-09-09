@@ -7,6 +7,10 @@ public final class StaticStack<E> implements Stack<E> {
     private int count;
     private final int capacity;
 
+    private StaticStack()   {
+        throw new RuntimeException("Private constructor");
+    }
+
     @SuppressWarnings("unchecked")
     public StaticStack(int size) {
         array = (E[]) new Object[size];

@@ -36,15 +36,18 @@ public final class StaticQueue<E> implements Queue<E> {
     }
 
     @Override
-    public void remove() {
+    public E remove() {
         if (isEmpty())
             throw new IllegalArgumentException("Queue is empty");
 
         for (int i = 0; i < this.count - 1; i++)
             this.array[i] = this.array[i + 1];
 
+        E aux = this.array[count-1];
         this.array[count - 1] = null;
         this.count--;
+
+        return aux;
     }
 
     @Override
