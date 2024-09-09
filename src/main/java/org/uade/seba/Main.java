@@ -1,21 +1,15 @@
 package org.uade.seba;
 
+import org.uade.seba.queue.staticImpl.StaticQueue;
 import org.uade.seba.stack.staticImpl.StaticStack;
 
 public class Main {
     public static void main(String[] args) throws IllegalAccessException {
-        StaticStack<Integer> stack = new StaticStack<>(10);
-        int i = 0;
+        StaticQueue<Integer> queue = new StaticQueue<>(10);
+        for (int i = 0; i<10; i++)
+            queue.add(i);
 
-        while(!stack.isFull()) {
-            stack.push(i);
-            i++;
-        }
-
-
-        while (!stack.isEmpty())
-            stack.pop();
-
+        queue.remove();
         System.out.println("bye");
     }
 }
